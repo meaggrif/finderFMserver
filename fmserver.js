@@ -16,8 +16,15 @@ app.get("/", (req, res) => {
   fetch(baseURL)
     .then(r => r.json())
     .then(data => {
-      console.log(data);
-      res.send({ data: data });
+      let cleanData = [];
+
+      data.forEach(i => {
+        if (i.season1time && i.farmers_market_id != "1005764") {
+            cleanData.push(i);
+          }
+      });
+      console.log(cleanData);
+      res.send({ cleanData: cleanData });
     })
     .catch(err => {
       console.log(err);
