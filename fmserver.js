@@ -19,7 +19,7 @@ app.get("/", (req, res) => {
       let cleanData = [];
 
       data.forEach(i => {
-        if (i.season1time && i.farmers_market_id != "1005764") {
+        if (i.season1time && i.farmers_market_id != "1010258") {
             cleanData.push(i);
           }
       });
